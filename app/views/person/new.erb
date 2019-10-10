@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pick Your Ski Rental Here!</h1>
+    <form action="/people" method="POST">
+    
+        <label for="name">Person Name: </label>
+        <input type="text" name="name">
+        <br>
+        <br>
+        <label for="phone_number">Phone Number: </label>
+        <input type="text" name="phone_number">
+        <br>
+        <br>
+        <label for="room_number">Room Number: </label>
+        <input type="text" name="room_number">
+        <br>
+        <br>
+            <label for="ski"> Ski Type: </label>
+            <select name="ski">
+                <% Ski.all.each do |ski_type| %>
+                    <option value="<%= ski_type.id %>">
+                        <%= ski_type.brand %>
+                    </option>
+                <% end %>
+            </select>
+        <br>
+        <br>
+
+        <input type="submit" value="submit">
+        
+        <button><a href="/">Return Home</a></button>
+
+    </form>
+</body>
+</html>
